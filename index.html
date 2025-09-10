@@ -1,93 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Operation Automation: Portfolio</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f4f4f4;
-      color: #222;
-    }
-    header {
-      background: #222;
-      color: #fff;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-    nav {
-      margin-top: 1rem;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    main {
-      max-width: 800px;
-      margin: 2rem auto;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    .projects {
-      margin-top: 2rem;
-    }
-    .project {
-      margin-bottom: 1.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid #eee;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #222;
-      color: #fff;
-      margin-top: 2rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operation Automation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+            color: #1f2937;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 1.5rem;
+        }
+        .section-header {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #111827;
+        }
+        .gradient-text {
+            background-image: linear-gradient(to right, #6b46c1, #805ad5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-primary {
+            background-color: #4c1d95;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #6b21a8;
+        }
+        .nav-link.active {
+            color: #4c1d95;
+            font-weight: 600;
+        }
+        .card {
+            background-color: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <h1>Operation Automation</h1>
-    <p>Portfolio of Automation Projects</p>
-    <nav>
-      <a href="/index.html">Home</a>
-      <a href="/Pages/Projects.html">Projects</a>
-      <a href="/Pages/About.html">About</a>
-      <a href="/Pages/Contact.html">Contact</a>
-    </nav>
-  </header>
-  <main>
-    <section>
-      <h2>Welcome!</h2>
-      <p>
-        Explore a collection of automation projects designed to streamline workflows, boost productivity, and solve real-world problems.
-      </p>
-    </section>
-    <section class="projects">
-      <h2>Featured Projects</h2>
-      <div class="project">
-        <h3>Automated Report Generator</h3>
-        <p>A tool that collects data from multiple sources and generates comprehensive reports with a single click.</p>
-      </div>
-      <div class="project">
-        <h3>Task Scheduler Bot</h3>
-        <p>An intelligent bot that automates repetitive tasks and reminders, saving hours every week.</p>
-      </div>
-      <div class="project">
-        <h3>Data Sync Utility</h3>
-        <p>Synchronizes data between cloud services and local storage, ensuring consistency and reliability.</p>
-      </div>
-    </section>
-  </main>
-  <footer>
-    &copy; 2025 Operation Automation. All rights reserved.
-  </footer>
+<body class="bg-gray-50">
+
+    <!-- Navigation Bar -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container flex items-center justify-between py-4">
+            <div class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-700" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M10 20c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 9l-4-4 1.41-1.41L9 12.17l5.59-5.58L16 8l-7 7z"/>
+                </svg>
+                <span class="text-xl font-bold text-gray-900">Operation Automation</span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#hero" class="text-gray-600 hover:text-indigo-700 nav-link active">Home</a>
+                <a href="#services" class="text-gray-600 hover:text-indigo-700 nav-link">Services</a>
+                <a href="#casestudies" class="text-gray-600 hover:text-indigo-700 nav-link">Case Studies</a>
+                <a href="#reviews" class="text-gray-600 hover:text-indigo-700 nav-link">Testimonials</a>
+                <a href="#talks" class="text-gray-600 hover:text-indigo-700 nav-link">Talks & Training</a>
+                <a href="#contact" class="text-gray-600 hover:text-indigo-700 nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="bg-white py-20 md:py-32">
+            <div class="container text-center">
+                <h1 class="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">
+                    Powering the Future of Business with <span class="gradient-text">AI Automation</span>
+                </h1>
+                <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
+                    We specialize in designing and implementing customized AI and automation solutions that streamline operations, reduce costs, and accelerate growth for Silicon Valley's leading companies. Our solutions are not just about technology; they're about transforming your business to be more efficient and responsive to market demands.
+                </p>
+                <div class="mt-8 flex justify-center space-x-4">
+                    <a href="#contact" class="btn-primary">Get a Consultation</a>
+                    <a href="#services" class="text-gray-600 hover:text-indigo-700 font-semibold px-4 py-2 rounded-full transition-colors">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-header">Our Core Services</h2>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">We provide comprehensive solutions to transform your operations and empower your team.</p>
+                </div>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card text-center">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-100 mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-700" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                            </svg>
+                        </div>
+                        <h3 class="mt-4 text-xl font-semibold">AI Strategy & Implementation</h3>
+                        <p class="mt-2 text-gray-600">We guide you in identifying high-impact automation opportunities and building a clear roadmap for successful implementation. Our approach focuses on seamless integration into your existing workflows.</p>
+                    </div>
+                    <div class="card text-center">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-100 mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-700" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM9 13H7v-2h2v2zm3 0h-2v-2h2v2zm3 0h-2v-2h2v2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="mt-4 text-xl font-semibold">Process Automation</h3>
+                        <p class="mt-2 text-gray-600">From repetitive data entry to complex workflows, we automate processes to free up your team for strategic, value-added work. We specialize in solutions for a variety of sectors, including field services, sales, and logistics.</p>
+                    </div>
+                    <div class="card text-center">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-100 mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-700" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v-2h-2v2zm1-5c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zM9 9h6v6H9z"/>
+                            </svg>
+                        </div>
+                        <h3 class="mt-4 text-xl font-semibold">Training & Change Management</h3>
+                        <p class="mt-2 text-gray-600">We provide comprehensive training to ensure your team is equipped to leverage new technologies effectively. Our hands-on approach guarantees rapid adoption and proficiency for all personnel.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Studies Section -->
+        <section id="casestudies" class="bg-gray-100 py-20">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-header">Real-World Case Studies</h2>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">See how we've helped companies like yours achieve remarkable results.</p>
+                </div>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Case Study 1: Inventory Management -->
+                    <div class="card">
+                        <h3 class="text-xl font-semibold text-indigo-700">Inventory Management Optimization: 65% Increase in Operational Efficiency</h3>
+                        <p class="mt-2 text-gray-600">We engineered a bespoke inventory management system, complete with a custom Microsoft PowerApps dashboard for real-time reporting. This solution was instrumental in eliminating workflow interruptions and streamlining the management of operational consumables.</p>
+                        <ul class="mt-4 text-sm text-gray-500 list-disc list-inside space-y-2">
+                            <li>Real-time data synchronization from diverse sources.</li>
+                            <li>A robust PowerApps analytics suite that accelerates decision-making.</li>
+                            <li>A 15% reduction in inventory waste costs.</li>
+                        </ul>
+                    </div>
+                    <!-- Case Study 2: Field Service Client Retention -->
+                    <div class="card">
+                        <h3 class="text-xl font-semibold text-indigo-700">Field Service Client Retention: Over 200% Increase</h3>
+                        <p class="mt-2 text-gray-600">We developed and deployed an automated outreach tool to re-engage past clients. This proactive approach significantly boosted client retention and strengthened customer relationships.</p>
+                        <ul class="mt-4 text-sm text-gray-500 list-disc list-inside space-y-2">
+                            <li>Automated email workflows that streamline communication.</li>
+                            <li>A sophisticated scheduling system for field services.</li>
+                            <li>Automated email confirmations for appointments, reducing no-shows.</li>
+                        </ul>
+                    </div>
+                    <!-- Case Study 3: Sales Process Automation -->
+                    <div class="card">
+                        <h3 class="text-xl font-semibold text-indigo-700">Sales Process Automation: A "New Best Practice"</h3>
+                        <p class="mt-2 text-gray-600">Our team designed and implemented an intelligent sales outreach workflow that integrates client data with Microsoft automation tools. This solution improved productivity and efficiency for a major client, reducing the time spent on critical tasks by 75%.</p>
+                        <ul class="mt-4 text-sm text-gray-500 list-disc list-inside space-y-2">
+                            <li>Comprehensive standard operating procedures (SOPs) and training.</li>
+                            <li>A highly customizable workflow that scales with your business.</li>
+                            <li>Optimized processes that set a new standard for quality.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Reviews Section -->
+        <section id="reviews" class="py-20">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-header">Client Testimonials</h2>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Don't just take our word for it. Hear from the leaders we've helped.</p>
+                </div>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Review 1 -->
+                    <div class="card">
+                        <h1 class="text-2xl font-bold text-indigo-700 mb-4">"A Game-Changer for Our Team"</h1>
+                        <p class="text-lg italic text-gray-700">"This application has been a game-changer for my team. It's truly streamlined our workflow and significantly improved operational efficiency, making my job far more manageable."</p>
+                        <div class="mt-4 flex items-center">
+                            <div class="flex-shrink-0">
+                                <img class="h-12 w-12 rounded-full" src="https://placehold.co/48x48/FBCFE8/881337?text=DM" alt="Delivery Manager Profile">
+                            </div>
+                            <div class="ml-4">
+                                <div class="text-base font-semibold text-gray-900">Delivery Manager</div>
+                                <div class="text-sm text-gray-500">Key Client</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 2 -->
+                    <div class="card">
+                        <h1 class="text-2xl font-bold text-indigo-700 mb-4">"Unmatched Speed and Seamless Integration"</h1>
+                        <p class="text-lg italic text-gray-700">"The speed at which this automation was developed and successfully integrated into our operations is remarkable. In my career here, I've never seen such a rapid and seamless adoption of new technology."</p>
+                        <div class="mt-4 flex items-center">
+                            <div class="flex-shrink-0">
+                                <img class="h-12 w-12 rounded-full" src="https://placehold.co/48x48/E0E7FF/3730A3?text=SM" alt="Senior Manager Profile">
+                            </div>
+                            <div class="ml-4">
+                                <div class="text-base font-semibold text-gray-900">Senior Manager</div>
+                                <div class="text-sm text-gray-500">Key Client</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 3 -->
+                    <div class="card">
+                        <h1 class="text-2xl font-bold text-indigo-700 mb-4">"A New Standard for Excellence"</h1>
+                        <p class="text-lg italic text-gray-700">"This new automation is already setting a new standard for how we operate. We've designated it as a best practice and are planning a rapid, company-wide deployment to replicate its success across all our departments."</p>
+                        <div class="mt-4 flex items-center">
+                            <div class="flex-shrink-0">
+                                <img class="h-12 w-12 rounded-full" src="https://placehold.co/48x48/F3E8FF/5B21B6?text=SOM" alt="Senior Operations Manager Profile">
+                            </div>
+                            <div class="ml-4">
+                                <div class="text-base font-semibold text-gray-900">Senior Operations Manager</div>
+                                <div class="text-sm text-gray-500">Key Client</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Talks & Training Section -->
+        <section id="talks" class="bg-gray-100 py-20">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-header">Talks & Training Services</h2>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Empower your team with the skills to thrive in the age of automation. Our tailored talks and training sessions are designed for modern businesses.</p>
+                </div>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="card">
+                        <h3 class="text-2xl font-semibold text-gray-900">Power BI and Data Analytics Training</h3>
+                        <p class="mt-4 text-gray-600">A comprehensive 2-day course for business professionals and analysts looking to leverage data-driven decision-making. Learn the foundations of data analytics and get hands-on experience with Power BI.</p>
+                        <ul class="mt-4 text-sm text-gray-500 list-disc list-inside">
+                            <li>Day 1: Foundations of Data Analytics</li>
+                            <li>Day 2: Power BI Hands-On & Applied Analytics</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-2xl font-semibold text-gray-900">Salesforce Reports and Dashboards Workshop</h3>
+                        <p class="mt-4 text-gray-600">A one-day workshop designed to unlock the power of Salesforce reporting. From basic reports to advanced dashboards, your team will gain the skills to create meaningful insights from their data.</p>
+                        <ul class="mt-4 text-sm text-gray-500 list-disc list-inside">
+                            <li>Creating custom reports</li>
+                            <li>Advanced reporting techniques</li>
+                            <li>Building dynamic dashboards</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-8 text-center">
+                    <a href="#contact" class="btn-primary">Inquire About Training</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-white">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-header">Get in Touch</h2>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Ready to transform your operations? Let's discuss how AI and automation can work for you.</p>
+                </div>
+                <div class="mt-12 flex justify-center">
+                    <div class="card max-w-xl w-full">
+                        <form action="#" method="POST" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                                <div class="mt-1">
+                                    <input type="text" name="name" id="name" autocomplete="name" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                                <div class="mt-1">
+                                    <input id="email" name="email" type="email" autocomplete="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="company" class="block text-sm font-medium text-gray-700">Company</label>
+                                <div class="mt-1">
+                                    <input type="text" name="company" id="company" autocomplete="organization" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                                <div class="mt-1">
+                                    <textarea id="message" name="message" rows="4" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"></textarea>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn-primary w-full">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container text-center text-sm">
+            <p>&copy; 2025 Operation Automation. All rights reserved.</p>
+            <p class="mt-2 text-gray-400">Crafted with ❤️ in Silicon Valley.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-
